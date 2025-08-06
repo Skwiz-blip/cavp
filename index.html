@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAVP - Coopérative Agricole Village du Paysans</title>
+    <title>SCOOP CA Village du Paysan - Coopérative Agricole</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
@@ -164,6 +164,9 @@
 
         .logo-text span {
             font-weight: 300;
+            font-size: 0.9rem;
+            display: block;
+            line-height: 1.2;
         }
 
         .nav-menu {
@@ -270,149 +273,19 @@
             align-items: center;
         }
 
-        /* Hero Slider */
-        .hero-slider {
+        /* Hero Image */
+        .hero-image {
             position: relative;
             height: 500px;
-            perspective: 1000px;
-        }
-
-        .slider-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .slider-card {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: var(--white);
             border-radius: 20px;
-            padding: 3rem;
+            overflow: hidden;
             box-shadow: var(--shadow);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
-        .slider-card.active {
-            opacity: 1;
-            transform: translateY(0);
-            z-index: 1;
-        }
-
-        .slider-card .card-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--light-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-        }
-
-        .slider-card .card-title {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .slider-card .card-desc {
-            font-size: 1rem;
-            color: var(--text-light);
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .slider-nav {
-            position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1rem;
-            z-index: 2;
-        }
-
-        .slider-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--light-green);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .slider-dot.active {
-            background: var(--accent-color);
-            transform: scale(1.2);
-        }
-
-        /* Services Section */
-        .services {
-            background: var(--white);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 10px;
-            padding: 3rem 2rem;
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-            border: 1px solid rgba(44, 85, 48, 0.05);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(44, 85, 48, 0.15);
-            border-color: rgba(44, 85, 48, 0.1);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--light-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            font-size: 2rem;
-            color: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-icon {
-            background: var(--accent-color);
-            color: var(--white);
-            transform: rotateY(180deg);
-        }
-
-        .service-title {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .service-desc {
-            color: var(--text-light);
-            line-height: 1.6;
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* About Section */
@@ -472,60 +345,168 @@
             line-height: 1.8;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+        /* Objectives Section */
+        .objectives {
+            background: var(--white);
         }
 
-        .stat-card {
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .objective-card {
             background: var(--white);
-            padding: 3rem 2rem;
             border-radius: 10px;
+            padding: 3rem 2rem;
             text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(44, 85, 48, 0.05);
+        }
+
+        .objective-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(44, 85, 48, 0.15);
+            border-color: rgba(44, 85, 48, 0.1);
+        }
+
+        .objective-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .objective-card:hover .objective-icon {
+            background: var(--accent-color);
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+
+        .objective-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .objective-desc {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Means Section */
+        .means {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .means-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .means-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .means-number {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--accent-color);
+            min-width: 40px;
+        }
+
+        .means-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            border-radius: 10px;
+            overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
         }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(44, 85, 48, 0.15);
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(44, 85, 48, 0.2);
         }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 300;
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 2rem;
+            background: var(--white);
+        }
+
+        .project-year {
+            display: inline-block;
+            background: var(--light-green);
             color: var(--primary-color);
-            display: block;
-            margin-bottom: 0.5rem;
-            line-height: 1;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
 
-        .stat-label {
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
             color: var(--text-light);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
 
         /* Contact Section */
         .contact {
-            background: var(--primary-color);
-            color: var(--white);
+            background: var(--light-green);
             position: relative;
             overflow: hidden;
-        }
-
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: var(--accent-light);
-            opacity: 0.1;
-            border-radius: 50%;
         }
 
         .contact-content {
@@ -539,13 +520,14 @@
         .contact h2 {
             font-size: 2.5rem;
             font-weight: 300;
+            color: var(--primary-color);
             margin-bottom: 2rem;
             letter-spacing: -1px;
         }
 
         .contact p {
             font-size: 1.1rem;
-            opacity: 0.9;
+            color: var(--text-light);
             margin-bottom: 4rem;
             line-height: 1.8;
         }
@@ -567,31 +549,31 @@
 
         .form-group input,
         .form-group textarea {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: var(--white);
+            border: 1px solid rgba(44, 85, 48, 0.1);
             border-radius: 0;
             padding: 1.2rem;
-            color: var(--white);
+            color: var(--text-dark);
             font-size: 1rem;
             transition: var(--transition);
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--text-light);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-color);
-            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 3px rgba(127, 176, 105, 0.2);
         }
 
         .submit-btn {
             grid-column: 1 / -1;
-            background: var(--accent-color);
-            color: var(--primary-color);
+            background: var(--primary-color);
+            color: var(--white);
             border: none;
             border-radius: 0;
             padding: 1.2rem 3rem;
@@ -603,9 +585,9 @@
         }
 
         .submit-btn:hover {
-            background: var(--white);
+            background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(44, 85, 48, 0.3);
         }
 
         /* Footer */
@@ -703,6 +685,22 @@
             padding-left: 5px;
         }
 
+        .footer-contact {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-contact p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .footer-contact i {
+            margin-top: 3px;
+            color: var(--accent-color);
+        }
+
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
@@ -749,11 +747,6 @@
             .about-text {
                 text-align: center;
             }
-
-            .stats-grid {
-                max-width: 600px;
-                margin: 0 auto;
-            }
         }
 
         @media (max-width: 768px) {
@@ -765,8 +758,18 @@
                 font-size: 2.5rem;
             }
 
+            .hero {
+                min-height: auto;
+                height: auto;
+                padding: 10rem 0 4rem;
+            }
+
             .hero-text h1 {
                 font-size: 2.5rem;
+            }
+
+            .hero-image {
+                height: 350px;
             }
 
             .nav-menu {
@@ -796,6 +799,11 @@
             .contact-form {
                 grid-template-columns: 1fr;
             }
+
+            .means-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -816,85 +824,7 @@
                 width: 100%;
                 text-align: center;
             }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
         }
-    /* Modifications uniquement pour la section Hero en mobile */
-    @media (max-width: 768px) {
-        .hero {
-            height: auto;
-            min-height: 100vh;
-            padding: 8rem 0 4rem;
-        }
-
-        .hero-content {
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            padding-top: 4rem;
-        }
-
-        .hero-text {
-            text-align: center;
-            order: 1;
-        }
-
-        .hero-text h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-text p {
-            font-size: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero-slider {
-            height: 300px;
-            order: 0;
-        }
-
-        .slider-card {
-            padding: 2rem;
-        }
-
-        .slider-card .card-icon {
-            width: 60px;
-            height: 60px;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .slider-card .card-title {
-            font-size: 1.3rem;
-        }
-
-        .cta-group {
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        .slider-nav {
-            bottom: -40px;
-        }
-    }
-
-    /* Pour les très petits écrans */
-    @media (max-width: 480px) {
-        .hero-text h1 {
-            font-size: 1.8rem;
-        }
-
-        .hero-slider {
-            height: 250px;
-        }
-    }
     </style>
 </head>
 <body>
@@ -903,12 +833,13 @@
         <div class="container nav-container">
             <a href="#" class="logo">
                 <div class="logo-icon"><i class="fas fa-leaf"></i></div>
-                <div class="logo-text">CAVP <span>Coopérative</span></div>
+                <div class="logo-text">CAVP <span>Coopérative Village du Paysan</span></div>
             </a>
             <ul class="nav-menu">
                 <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#objectifs">Objectifs</a></li>
+                <li><a href="#moyens">Moyens</a></li>
+                <li><a href="#projets">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn">
@@ -921,115 +852,158 @@
     <section id="accueil" class="hero">
         <div class="container hero-content">
             <div class="hero-text fade-up">
-                <h1> <span class="highlight">Une agriculture durable</span> au service des générations futures des communautés locales</h1>
-                <p>La CAVP accompagne les agriculteurs vers une transition écologique et économique performante, en alliant innovation, durabilité et savoir-faire traditionnel.</p>
+                <h1>Coopérative Agricole <span class="highlight">Village du Paysan</span></h1>
+                <p>Une organisation paysanne engagée pour une agriculture durable et la restauration des écosystèmes dans la Commune Ogou3, Préfecture de l'Ogou au Togo.</p>
                 <div class="cta-group">
-                    <a href="#services" class="btn btn-primary">Nos services</a>
-                    <a href="#contact" class="btn-secondary">Nous contacter</a>
+                    <a href="#contact" class="btn btn-primary">Nous contacter</a>
+                    <a href="#objectifs" class="btn-secondary">En savoir plus</a>
                 </div>
             </div>
-        </div> <!-- Fin .hero-content -->
-    </section>
-
-    <!-- Slider sous la bannière Hero -->
-    <section class="hero-slider-section">
-        <div class="hero-slider fade-up">
-            <div class="slider-container">
-                <div class="slider-card active">
-                    <div class="card-icon"><i class="fas fa-seedling"></i></div>
-                    <h3 class="card-title">Agriculture Régénérative</h3>
-                    <p class="card-desc">Des pratiques qui restaurent les sols et augmentent la biodiversité tout en maintenant la productivité.</p>
-                    <a href="#" class="btn-secondary">En savoir plus</a>
-                </div>
-                <div class="slider-card">
-                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3 class="card-title">Performance Économique</h3>
-                    <p class="card-desc">Optimisation des coûts et valorisation des productions pour une rentabilité durable.</p>
-                    <a href="#" class="btn-secondary">En savoir plus</a>
-                </div>
-                <div class="slider-card">
-                    <div class="card-icon"><i class="fas fa-users"></i></div>
-                    <h3 class="card-title">Solidarité Coopérative</h3>
-                    <p class="card-desc">La force du collectif pour mutualiser les moyens et partager les connaissances.</p>
-                    <a href="#" class="btn-secondary">En savoir plus</a>
-                </div>
-            </div>
-            <div class="slider-nav">
-                <div class="slider-dot active" data-slide="0"></div>
-                <div class="slider-dot" data-slide="1"></div>
-                <div class="slider-dot" data-slide="2"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services section-padding">
-        <div class="container">
-            <div class="section-header fade-up">
-                <h2 class="section-title">Nos expertises</h2>
-                <p class="section-subtitle">Une gamme complète de services pour accompagner les agriculteurs à chaque étape de leur développement</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card fade-up">
-                    <div class="service-icon"><i class="fas fa-tractor"></i></div>
-                    <h3 class="service-title">Machinisme Agricole</h3>
-                    <p class="service-desc">Parc matériel moderne et solutions de mutualisation pour optimiser vos investissements.</p>
-                </div>
-                <div class="service-card fade-up">
-                    <div class="service-icon"><i class="fas fa-prescription-bottle-alt"></i></div>
-                    <h3 class="service-title">Intrants Qualité</h3>
-                    <p class="service-desc">Semences certifiées et intrants biologiques pour une agriculture performante et responsable.</p>
-                </div>
-                <div class="service-card fade-up">
-                    <div class="service-icon"><i class="fas fa-microscope"></i></div>
-                    <h3 class="service-title">Analyse & Conseil</h3>
-                    <p class="service-desc">Laboratoire d'analyses et conseils agronomiques personnalisés pour optimiser vos pratiques.</p>
-                </div>
-                <div class="service-card fade-up">
-                    <div class="service-icon"><i class="fas fa-shopping-basket"></i></div>
-                    <h3 class="service-title">Commercialisation</h3>
-                    <p class="service-desc">Circuits de vente optimisés et valorisation de vos productions sur les meilleurs marchés.</p>
-                </div>
-                <div class="service-card fade-up">
-                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3 class="service-title">Formation Continue</h3>
-                    <p class="service-desc">Programmes de formation adaptés aux enjeux actuels de l'agriculture.</p>
-                </div>
-                <div class="service-card fade-up">
-                    <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3 class="service-title">Innovation Technologique</h3>
-                    <p class="service-desc">Veille technologique et expérimentation de nouvelles pratiques culturales.</p>
-                </div>
+            <div class="hero-image fade-up">
+                <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Agriculture durable">
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="apropos" class="about section-padding">
+    <section class="about section-padding">
         <div class="container about-content">
             <div class="about-text fade-up">
-                <h2>Notre engagement pour une agriculture durable</h2>
-                <p>Fondée en 1995, la Coopérative Agricole Village du Paysans (CAVP) rassemble aujourd'hui plus de 400 agriculteurs engagés dans une démarche de progrès continu.</p>
-                <p>Notre mission : concilier performance économique et respect de l'environnement pour construire une agriculture viable pour les générations futures.</p>
-                <p>À travers nos différents services et notre accompagnement personnalisé, nous aidons chaque adhérent à progresser à son rythme vers des systèmes de production plus durables.</p>
-                <a href="#contact" class="btn btn-primary">Rejoignez-nous</a>
+                <h2>Notre Coopérative</h2>
+                <p>La Société Coopérative avec Conseil d'Administration « COOP-CA » LE VILLAGE DU PAYSAN est immatriculée au registre des Sociétés Coopératives Agricoles sous le n° CCA 02950/2019MAPAH/SG/DFDTOPA du 24 décembre 2019.</p>
+                <p>Face à la dégradation continue des ressources naturelles, nous producteurs de la biodiversité agricole (volaille, caprins, ovins, palmiers à huile, anacardes, sojas, coton, manioc, maïs, haricots) avons décidé d'unir nos forces pour promouvoir un développement durable.</p>
+                <p>Notre siège est localisé aux points N 07° 18' 28,7'' et E 001° 09' 30,4'' près de l'école la Grâce dans la Commune Ogou3.</p>
             </div>
-            <div class="stats-grid fade-up">
-                <div class="stat-card">
-                    <span class="stat-number">400+</span>
-                    <span class="stat-label">Agriculteurs</span>
+            <div class="hero-image fade-up">
+                <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Coopérative agricole">
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section id="objectifs" class="objectives section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Nos Objectifs</h2>
+                <p class="section-subtitle">La COOP-CA LE VILLAGE DU PAYSAN se veut d'assurer la production, le stockage, la transformation et la commercialisation des produits agricoles tout en restaurant les écosystèmes.</p>
+            </div>
+            <div class="objectives-grid">
+                <div class="objective-card fade-up">
+                    <div class="objective-icon"><i class="fas fa-seedling"></i></div>
+                    <h3 class="objective-title">Production Agricole</h3>
+                    <p class="objective-desc">Anacardes, sojas, coton, manioc, maïs, haricots, palmiers à huile et autres cultures locales pour améliorer les revenus des paysans.</p>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">25</span>
-                    <span class="stat-label">Ans d'expérience</span>
+                <div class="objective-card fade-up">
+                    <div class="objective-icon"><i class="fas fa-tree"></i></div>
+                    <h3 class="objective-title">Restauration Écologique</h3>
+                    <p class="objective-desc">Restauration des écosystèmes et des terres dégradés, réhabilitation des forêts sacrées pour la conservation de la biodiversité.</p>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">15k</span>
-                    <span class="stat-label">Hectares</span>
+                <div class="objective-card fade-up">
+                    <div class="objective-icon"><i class="fas fa-hands-helping"></i></div>
+                    <h3 class="objective-title">Encadrement Technique</h3>
+                    <p class="objective-desc">Encadrement des groupements agricoles et forestiers pour des pratiques durables et productives.</p>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">98%</span>
-                    <span class="stat-label">Satisfaction</span>
+                <div class="objective-card fade-up">
+                    <div class="objective-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="objective-title">Commercialisation</h3>
+                    <p class="objective-desc">Recherche et négociation des marchés pour l'écoulement des produits agricoles au meilleur prix.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Means Section -->
+    <section id="moyens" class="means section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Nos Moyens d'Action</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8)">Pour atteindre ses objectifs, la COOP-CA met en œuvre plusieurs stratégies et moyens d'action concrets.</p>
+            </div>
+            <div class="means-list fade-up">
+                <div class="means-item">
+                    <div class="means-number">1</div>
+                    <div class="means-text">Information, éducation et communication du public utilisant l'approche learning by doing</div>
+                </div>
+                <div class="means-item">
+                    <div class="means-number">2</div>
+                    <div class="means-text">Élevage, production, stockage, transformation et commercialisation des produits agricoles</div>
+                </div>
+                <div class="means-item">
+                    <div class="means-number">3</div>
+                    <div class="means-text">Développement de partenariats avec les Institutions et les Acteurs de développement</div>
+                </div>
+                <div class="means-item">
+                    <div class="means-number">4</div>
+                    <div class="means-text">Recherche et négociation des marchés pour l'écoulement des produits agricoles</div>
+                </div>
+                <div class="means-item">
+                    <div class="means-number">5</div>
+                    <div class="means-text">Développement du système de warrantage avec les Institutions de Micro-Finance</div>
+                </div>
+                <div class="means-item">
+                    <div class="means-number">6</div>
+                    <div class="means-text">Renforcement des capacités d'intervention des acteurs locaux</div>
+                </div>
+                <div class="means-item">
+                    <div class="means-number">7</div>
+                    <div class="means-text">Fourniture de plants forestiers et restauration des terres dégradées</div>
+                </div>
+                <div class="means-item">
+                    <div class="means-number">8</div>
+                    <div class="means-text">Valorisation des produits forestiers non ligneux</div>
+                </div>
+                <div class="means-item">
+                    <div class="means-number">9</div>
+                    <div class="means-text">Organisation et participation aux travaux communautaires</div>
+                </div>
+                <div class="means-item">
+                    <div class="means-number">10</div>
+                    <div class="means-text">Recherche et développement pour des solutions innovantes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projets" class="projects section-padding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Nos Réalisations</h2>
+                <p class="section-subtitle">Depuis sa création, la COOP-CA LE VILLAGE DU PAYSAN a mené plusieurs actions concrètes sur le terrain.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Plantation d'arbres">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-year">2016</span>
+                        <h3 class="project-title">Distribution de Plants</h3>
+                        <p class="project-desc">Acquisition et distribution de 1100 pieds de palmiers à huile, 500 pieds de teck et 1400 plants divers pour le reboisement.</p>
+                        <a href="#" class="btn-secondary">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="project-card fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1605007493699-af65834f8aa3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Plantation scolaire">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-year">2017</span>
+                        <h3 class="project-title">Plantations Scolaires</h3>
+                        <p class="project-desc">Plantation du CEG de Zolou, du petit marché de Gléi, des EPP de la Gare et de Datcha-Atikpayé avec l'appui du Préfet de l'Ogou.</p>
+                        <a href="#" class="btn-secondary">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="project-card fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Restauration de terres">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-year">2018-2019</span>
+                        <h3 class="project-title">Restauration des Terres</h3>
+                        <p class="project-desc">Restauration pilote des terres et de la forêt sacrée d'Amoutchou, mise en valeur intégrée de 100 ha du domaine communautaire de Moudja.</p>
+                        <a href="#" class="btn-secondary">En savoir plus</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1038,8 +1012,8 @@
     <!-- Contact Section -->
     <section id="contact" class="contact section-padding">
         <div class="container contact-content">
-            <h2 class="fade-up">Prêt à nous rejoindre ?</h2>
-            <p class="fade-up">Notre équipe d'experts est à votre disposition pour étudier comment la CAVP peut accompagner votre exploitation dans sa transition agroécologique.</p>
+            <h2 class="fade-up">Contactez-nous</h2>
+            <p class="fade-up">Vous souhaitez en savoir plus sur nos activités ou devenir partenaire ? N'hésitez pas à nous contacter.</p>
             <form class="contact-form fade-up">
                 <div class="form-group">
                     <input type="text" placeholder="Prénom" required>
@@ -1068,47 +1042,34 @@
                 <div class="footer-about">
                     <a href="#" class="footer-logo">
                         <div class="footer-logo-icon"><i class="fas fa-leaf"></i></div>
-                        <div class="footer-logo-text">CAVP <span>Coopérative</span></div>
+                        <div class="footer-logo-text">CAVP <span>Coopérative Village du Paysan</span></div>
                     </a>
-                    <p>La Coopérative Agricole Village du Paysans accompagne les agriculteurs vers une agriculture performante, durable et responsable depuis 1995.</p>
+                    <p>Une organisation paysanne engagée pour une agriculture durable et la restauration des écosystèmes dans la Commune Ogou3, Préfecture de l'Ogou au Togo.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-links-container">
                     <h3 class="footer-title">Liens rapides</h3>
                     <ul class="footer-links">
                         <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#services">Nos services</a></li>
-                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#objectifs">Objectifs</a></li>
+                        <li><a href="#moyens">Moyens d'action</a></li>
+                        <li><a href="#projets">Nos réalisations</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links-container">
-                    <h3 class="footer-title">Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Machinisme</a></li>
-                        <li><a href="#">Intrants</a></li>
-                        <li><a href="#">Commercialisation</a></li>
-                        <li><a href="#">Formation</a></li>
-                        <li><a href="#">Innovation</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h3 class="footer-title">Contact</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Gléi, Togo</li>
-                        <li><i class="fas fa-phone"></i> +228 90 12 54 05</li>
-                        <li><i class="fas fa-envelope"></i> cavp@gmail.com</li>
-                    </ul>
+                    <h3 class="footer-title">Coordonnées</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Points N 07° 18' 28,7'' et E 001° 09' 30,4'' Près école la Grâce, Commune Ogou3, Togo</p>
+                    <p><i class="fas fa-phone"></i> +228 90 12 54 05</p>
+                    <p><i class="fas fa-envelope"></i> contact@cavp-coop.tg</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 CAVP - Coopérative Agricole Village du Paysans. Tous droits réservés.</p>
+                <p>&copy; 2023 COOP-CA LE VILLAGE DU PAYSAN. Immatriculée au registre des Sociétés Coopératives Agricoles sous le n° CCA 02950/2019MAPAH/SG/DFDTOPA</p>
             </div>
         </div>
     </footer>
@@ -1123,32 +1084,6 @@
             mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
-
-        // Hero Slider
-        const sliderCards = document.querySelectorAll('.slider-card');
-        const sliderDots = document.querySelectorAll('.slider-dot');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            sliderCards.forEach(card => card.classList.remove('active'));
-            sliderDots.forEach(dot => dot.classList.remove('active'));
-            sliderCards[index].classList.add('active');
-            sliderDots[index].classList.add('active');
-            currentSlide = index;
-        }
-
-        sliderDots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const slideIndex = parseInt(dot.getAttribute('data-slide'));
-                showSlide(slideIndex);
-            });
-        });
-
-        // Auto slide change
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % sliderCards.length;
-            showSlide(currentSlide);
-        }, 5000);
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1232,6 +1167,4 @@
         });
     </script>
 </body>
-
 </html>
-
